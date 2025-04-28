@@ -19,7 +19,6 @@ def get_user_number():
     if len(user_number) != 5:
         print("try again")
         return get_user_number()
-
     else:
         return user_number
 
@@ -28,6 +27,9 @@ def get_user_money():
     print("Your current amount of money is"  , money)
     inputMoney = input("Enter how much money you want to put in: ")
     inputMoney = int(inputMoney)
+    if inputMoney < 0:
+        print("Negatives dont work pal retry.")
+        return get_user_money()
     money = money - inputMoney
 
     if money < 0:
