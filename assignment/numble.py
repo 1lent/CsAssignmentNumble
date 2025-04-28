@@ -16,7 +16,12 @@ def get_random_number():
 
 def get_user_number():
     user_number = input("Enter a 5 digit number to guess the numble: ")
-    return user_number
+    if len(user_number) != 5:
+        print("try again")
+        return get_user_number()
+
+    else:
+        return user_number
 
 def get_user_money():
     global money
